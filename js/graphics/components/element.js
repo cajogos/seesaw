@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // TODO: Draw functions
 
+=======
+>>>>>>> 8cba08838f462de43aa4fb5d09dfe707ce6986e9
 function Element(id) {
     this.__id = id;
     // Location
@@ -14,6 +17,7 @@ function Element(id) {
     // TODO: this._maxWidth = 0;  *COMMENT: WHAT COULD BE THE MAX?
     // TODO: this._maxHeight = 0;
     // Styling
+<<<<<<< HEAD
     this._padding = 0;
     this._margin = 0;
     this._font = Font(10, 'Arial');
@@ -49,6 +53,21 @@ Element.prototype.setMinHeight = function (minHeight) {
 // TODO: Element.prototype.setMaxHeight = function() {};
 
 
+=======
+    this._padding = 10;
+    this._margin = 5;
+    this._fontSize = 12;
+    this._fontFamily = 'sans-serif';
+
+
+    console.log('*** Element ***', this);
+}
+
+/* GLOBAL VARIABLES */
+
+
+// Set bounds of an element
+>>>>>>> 8cba08838f462de43aa4fb5d09dfe707ce6986e9
 Element.prototype.setBounds = function (x, y, width, height) {
     // Make values whole numbers
     x = Math.floor(x);
@@ -68,6 +87,7 @@ Element.prototype.setBounds = function (x, y, width, height) {
         this._y = y;
         this._width = width;
         this._height = height;
+<<<<<<< HEAD
     }
 };
 
@@ -94,12 +114,26 @@ Element.prototype.setZ = function (z) {
     if (this._z !== z) {
         this._z = z;
     }
+=======
+        // TODO: Draw bounds (this._drawBounds = true)
+        console.log('*** Bounds Changed ***', this, x, y, width, height);
+        return true;
+    }
+    return false;
+>>>>>>> 8cba08838f462de43aa4fb5d09dfe707ce6986e9
 };
 Element.prototype.setLocation = function (x, y) {
     this.setBounds(x, y, this._width, this._height);
 };
+<<<<<<< HEAD
 Element.prototype.setSize = function (width, height) {
     this.setBounds(this._x, this._y, width, height);
 };
 
 // Element.prototype.setFont = function() { };
+=======
+
+Element.prototype.setSize = function (width, height) {
+    this.setBounds(this._x, this._y, width, height);
+};
+>>>>>>> 8cba08838f462de43aa4fb5d09dfe707ce6986e9
