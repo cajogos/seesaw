@@ -1,5 +1,6 @@
 // TODO: Draw functions
 function Element(id) {
+    // TODO: if (id === undefined) id = 'element' + 'TOIMPLEMENT';
     this.__id = id;
     // Location
     this._x = 0;
@@ -16,6 +17,15 @@ function Element(id) {
     this._padding = [0, 0, 0, 0];
     this._margin = [0, 0, 0, 0];
     this._font = Font(10, 'Arial');
+    // TODO: Implement a Border class
+
+    // TODO: Different cursors?
+    // TODO: Text-shadows/Box-shadows?
+
+    // DRAW FLAGS
+    this.drawBounds = true;
+    this.drawStyles = true;
+    this.drawColors = true;
 
     console.log('*** Element ***', this); // TODO: Remove before production
 }
