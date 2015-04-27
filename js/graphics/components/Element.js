@@ -13,12 +13,48 @@ function Element(id) {
     // TODO: this._maxWidth = 0;  *COMMENT: WHAT COULD BE THE MAX?
     // TODO: this._maxHeight = 0;
     // Styling
-    this._padding = 0;
-    this._margin = 0;
+    this._padding = [0, 0, 0, 0];
+    this._margin = [0, 0, 0, 0];
     this._font = Font(10, 'Arial');
 
     console.log('*** Element ***', this); // TODO: Remove before production
 }
+
+Element.prototype.setFont = function (font) {
+    if (font instanceof Font) {
+        this._font = font;
+    }
+};
+
+Element.prototype.getFont = function () {
+    return this._font;
+};
+
+Element.prototype.setPadding = function (padding) {
+    // Global padding
+    if (padding.length === 1) this.padding = [padding[0], padding[0], padding[0], padding[0]];
+    // Top-Bottom, Left-Right padding
+    if (padding.length === 2) this.padding = [padding[0], padding[1], padding[0], padding[1]];
+    // Specific padding
+    if (padding.length === 4) this.padding = [padding[0], padding[1], padding[2], padding[3]];
+};
+
+Element.prototype.getPadding = function () {
+    return this._padding;
+};
+
+Element.prototype.setMargin = function (margin) {
+    // Global margin
+    if (margin.length === 1) this.margin = [margin[0], margin[0], margin[0], margin[0]];
+    // Top-Bottom, Left-Right margin
+    if (margin.length === 2) this.margin = [margin[0], margin[1], margin[0], margin[1]];
+    // Specific margin
+    if (margin.length === 4) this.margin = [margin[0], margin[1], margin[2], margin[3]];
+};
+
+Element.prototype.getMargin = function () {
+    return this._margin;
+};
 
 
 Element.prototype.getMinWidth = function () {
