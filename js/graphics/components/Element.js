@@ -11,7 +11,7 @@ function Element(id) {
     this._height = 0;
     this._minWidth = 0;
     this._minHeight = 0;
-    // TODO: this._maxWidth = 0;  *COMMENT: WHAT COULD BE THE MAX?
+    // TODO: this._maxWidth = 0;   WHAT COULD BE THE MAX?
     // TODO: this._maxHeight = 0;
     // Styling
     this._padding = [0, 0, 0, 0];
@@ -24,11 +24,30 @@ function Element(id) {
 
     // DRAW FLAGS
     this.drawBounds = true;
+    this.drawLayout = true;
     this.drawStyles = true;
     this.drawColors = true;
 
     console.log('*** Element ***', this); // TODO: Remove before production
 }
+
+/* GLOBAL VARIABLES */
+
+Element.prototype.getID = function () {
+    return this.__id;
+};
+
+Element.prototype.create = function() {
+
+};
+
+// Add a child element (become parent)
+Element.prototype.add = function(child) {
+    child.setParent(this);
+    this._child.push(child);
+    // TODO: CALL LAYOUT DRAW FLAG
+};
+
 
 Element.prototype.setFont = function (font) {
     if (font instanceof Font) {
@@ -91,8 +110,6 @@ Element.prototype.setMinHeight = function (minHeight) {
 };
 // TODO: Element.prototype.getMaxHeight = function () {return this._maxHeight;};
 // TODO: Element.prototype.setMaxHeight = function() {};
-
-/* GLOBAL VARIABLES */
 
 
 // Set bounds of an element
