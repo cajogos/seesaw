@@ -17,7 +17,6 @@ function Element(id) {
     this._margin = 0;
     this._font = Font(10, 'Arial');
 
-
     console.log('*** Element ***', this); // TODO: Remove before production
 }
 
@@ -46,15 +45,6 @@ Element.prototype.setMinHeight = function (minHeight) {
 };
 // TODO: Element.prototype.getMaxHeight = function () {return this._maxHeight;};
 // TODO: Element.prototype.setMaxHeight = function() {};
-
-    this._padding = 10;
-    this._margin = 5;
-    this._fontSize = 12;
-    this._fontFamily = 'sans-serif';
-
-
-    console.log('*** Element ***', this);
-}
 
 /* GLOBAL VARIABLES */
 
@@ -105,11 +95,6 @@ Element.prototype.setZ = function (z) {
     if (this._z !== z) {
         this._z = z;
     }
-        // TODO: Draw bounds (this._drawBounds = true)
-        console.log('*** Bounds Changed ***', this, x, y, width, height);
-        return true;
-    }
-    return false;
 };
 Element.prototype.setLocation = function (x, y) {
     this.setBounds(x, y, this._width, this._height);
