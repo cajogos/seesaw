@@ -2,6 +2,8 @@
 function Element(id) {
     // TODO: if (id === undefined) id = 'element' + 'TOIMPLEMENT';
     this.__id = id;
+    this._children = [];
+    this._parent = undefined;
     // Location
     this._x = 0;
     this._y = 0;
@@ -18,6 +20,8 @@ function Element(id) {
     this._margin = [0, 0, 0, 0];
     this._font = Font(10, 'Arial');
     // TODO: Implement a Border class
+    // TODO: Background
+    // TODO: Foreground Color
 
     // TODO: Different cursors?
     // TODO: Text-shadows/Box-shadows?
@@ -37,15 +41,53 @@ Element.prototype.getID = function () {
     return this.__id;
 };
 
-Element.prototype.create = function() {
+Element.prototype.create = function () {
+    if (this._parent === undefined) return false;
 
+    this._parent._div.append('<div id="' + this.__id + '"></div>');
+
+    this._div = $('#' + this.__id);
+    this._div.css('box-sizing', 'border-box');
+};
+
+Element.prototype.draw = function () {
+    if (this.drawBounds) {
+    }
+    if (this.drawLayout) {
+    }
+    if (this.drawStyles) {
+    }
+    if (this.drawColors) {
+    }
 };
 
 // Add a child element (become parent)
-Element.prototype.add = function(child) {
+Element.prototype.add = function (child) {
     child.setParent(this);
-    this._child.push(child);
+    this._children.push(child);
     // TODO: CALL LAYOUT DRAW FLAG
+};
+
+// Remove a child element
+Element.prototype.remove = function (child) {
+    for (var i = 0; i < this._children.length; i++) {
+        if (this._children[i] === child) {
+            if (child._div !== undefined) {
+                child._div.remove();
+            }
+            this._children.splice(i, 1);
+            // TODO: DRAW LAYOUT FLAG
+            // TODO: CHILD HANDLE REMOVE
+            return;
+        }
+    }
+};
+
+// Set a parent element
+Element.prototype.setParent = function (parent) {
+    this._parent = parent;
+    if (this._z === 0) this._z = this._parent._z + 1;
+    // TODO: Inherit properties
 };
 
 
