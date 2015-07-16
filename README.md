@@ -5,8 +5,4 @@ It will write Bootstrap style code using jQuery.
 
 ### TODO
 
-* Add dependencies
-   * BOOTSTRAP
-   * JQUERY
-   * FONT-AWESOME
 * Make init function
