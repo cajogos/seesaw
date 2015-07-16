@@ -7,7 +7,6 @@
  */
 function Heading(id, headerLevel) {
     TextComponent.call(this, id);
-    this._id = id;
     this._headerLevel = headerLevel;
 }
 

@@ -15,6 +15,10 @@ function Component(id) {
     this._html = '';
 }
 
+Component.prototype.getID = function() {
+    return this._id;
+};
+
 /**
  * @param {number} width
  */

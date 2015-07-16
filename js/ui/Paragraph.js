@@ -6,9 +6,6 @@
  */
 function Paragraph(id) {
     TextComponent.call(this, id);
-    
-    this._text = undefined;
-    this._fontSize = undefined;
 }
 
 Paragraph.prototype = Object.create(TextComponent.prototype);
