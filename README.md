@@ -5,4 +5,4 @@ It will write Bootstrap style code using jQuery.
 
 ### TODO
 
-* Make init function
+* Build way to maintain the creation of the html element untangled from the other functions.
