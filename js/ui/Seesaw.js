@@ -14,7 +14,11 @@ SEESAW.add = function(component) {
     SEESAW.CONTAINER.append(component.getHTML());
 };
 
-SEESAW.prepend = function(component) {
+SEESAW.stack = function(component) {
     component.create();
     SEESAW.CONTAINER.prepend(component.getHTML());
 };
+
+SEESAW.horizontalRule = function(component) {
+    SEESAW.CONTAINER.append('<hr />');
+}
