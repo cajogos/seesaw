@@ -1,3 +1,8 @@
 # SEESAW
 
-A web based operating system written in JavaScript.
+Build your own HTML by writing simple JavaScript.
+
+### TODO
+
+* Add dependencies
+* Make init function
