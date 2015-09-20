@@ -37,3 +37,8 @@ This is a short list of things that I have yet to implement for SEESAW.
     - Text
     - etc.
 - To be honest, this list is almost infinite.
+
+## Many Thanks To
+
+- MrDoob, for providing amazing and easy to implement statistics to SEESAW using his Stats.js plugin. - [Stats.js on GitHub](https://github.com/mrdoob/stats.js/)
+- Font Awesome, for being damn awesome - [Font Awesome on GitHub](https://github.com/FortAwesome/Font-Awesome)
