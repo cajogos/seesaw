@@ -1,7 +1,8 @@
-body {
-    font-size: 2em;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-#seesaw-container {
-
+body {
+    font-family: 'arial', sans-serif;
 }
