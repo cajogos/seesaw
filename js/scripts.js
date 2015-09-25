@@ -19,6 +19,8 @@ $(document).ready(function ()
 
     btn2.setBackground('red');
 
+    var num = new SEESAW.Number();
+
     var encKey = 'key';
     var encrypt = new SEESAW.Encrypt(encKey);
 
