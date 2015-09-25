@@ -19,6 +19,9 @@ $(document).ready(function ()
 
     btn2.setBackground('red');
 
+    var encKey = 'key';
+    var encrypt = new SEESAW.Encrypt(encKey);
+
 
     console.log(seesaw); // TODO: Remove
 });
