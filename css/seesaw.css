@@ -1,8 +1,39 @@
 * {
     margin: 0;
     padding: 0;
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'arial', sans-serif;
+    font-family: sans-serif;
+}
+
+.seesaw-btn {
+    padding: 2px 10px;
+    border: 1px solid;
+    transition: all 0.5s;
+}
+
+.seesaw-btn:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.seesaw-btn.default {
+    color: #333;
+    background: #CCC;
+}
+
+.seesaw-btn.default:hover {
+    color: #CCC;
+    background: #333;
+}
+
+.seesaw-btn.default:active {
+    color: #DDD;
+    background: #444;
+    text-shadow: 0 0 10px #DDD;
 }

@@ -9,21 +9,23 @@ $(document).ready(function ()
 
     seesaw.addChild(btn);
 
-    btn.setBounds(100, 40, 200, 200);
-    btn.setBackground('teal');
+    btn.setBounds(100, 40, 100, 50);
 
     btn.addChild(btn2);
+
+    btn.click = function ()
+    {
+        console.log('OH NO YOU CLICKED ME'); // TODO: Remove
+    };
+
     btn2.setSize(40, 40);
 
     btn2.setPosition(4, 4);
-
-    btn2.setBackground('red');
 
     var num = new SEESAW.Number();
 
     var encKey = 'key';
     var encrypt = new SEESAW.Encrypt(encKey);
-
 
     console.log(seesaw); // TODO: Remove
 });
