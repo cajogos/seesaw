@@ -2,6 +2,7 @@
  * This is the start component, the component where all the SEESAW web app will run.
  *
  * @class SEESAW.Start
+ * @constructor
  * @config {Object} [config]
  * @extends SEESAW.Component
  */
@@ -66,6 +67,11 @@ SEESAW.Start.prototype._run = function ()
     });
 };
 
+/**
+ * @param {string} configItem
+ * @returns {*}
+ * @private
+ */
 SEESAW.Start.prototype._getConfig = function (configItem)
 {
     try

@@ -7,9 +7,17 @@
         <delete dir="${basedir}/build/output"/>
         <mkdir dir="${basedir}/build/output"/>
         <mkdir dir="${basedir}/build/output/css"/>
+        <mkdir dir="${basedir}/build/output/fonts"/>
+        <mkdir dir="${basedir}/build/output/js"/>
 
         <copy todir="${basedir}/build/output/css">
             <fileset dir="${basedir}/css"/>
+        </copy>
+        <copy todir="${basedir}/build/output/fonts">
+            <fileset dir="${basedir}/fonts"/>
+        </copy>
+        <copy todir="${basedir}/build/output/js">
+            <fileset dir="${basedir}/js"/>
         </copy>
 
         <jscomp compilationLevel="simple" warning="verbose" debug="false" output="build/output/seesaw.js">
