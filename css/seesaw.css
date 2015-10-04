@@ -22,18 +22,22 @@ body {
     transition: all 0.5s;
 }
 
-.seesaw-btn.default {
+.seesaw-btn.seesaw-btn-default {
     color: #333;
     background: #CCC;
 }
 
-.seesaw-btn.default:hover {
+.seesaw-btn.seesaw-btn-default:hover {
     color: #CCC;
     background: #333;
 }
 
-.seesaw-btn.default:active {
+.seesaw-btn.seesaw-btn-default:active {
     color: #DDD;
     background: #444;
     text-shadow: 0 0 10px #DDD;
+}
+
+.seesaw-label {
+    word-wrap: break-word;
 }

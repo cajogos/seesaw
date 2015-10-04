@@ -15,6 +15,10 @@ SEESAW.Component = function (id)
     this._background = '#FFFFFF';
     this._foreground = '#000000';
 
+    this._fontFace = 'inherit';
+    this._fontSize = 'inherit';
+    this._fontWeight = 'inherit';
+
     this._parent = undefined;
     this._childComponents = [];
 };
@@ -215,6 +219,89 @@ SEESAW.Component.prototype.getForeground = function ()
     return this._foreground;
 };
 
+// Font weight helper variables
+SEESAW.Component.FONT_WEIGHT_THINNEST = 100;
+SEESAW.Component.FONT_WEIGHT_THIN = 300;
+SEESAW.Component.FONT_WEIGHT_NORMAL = 400;
+SEESAW.Component.FONT_WEIGHT_BOLD = 700;
+SEESAW.Component.FONT_WEIGHT_BOLDER = 900;
+
+/**
+ * @param {string} fontFace
+ * @param {string|number} fontSize
+ * @param {string|number} fontWeight
+ */
+SEESAW.Component.prototype.setFont = function (fontFace, fontSize, fontWeight)
+{
+    if (this._fontFace !== fontFace)
+    {
+        this._fontFace = fontFace;
+        this._drawFont = true;
+    }
+    if (typeof fontSize === 'number')
+    {
+        fontSize += 'px';
+    }
+    if (this._fontSize !== fontSize)
+    {
+        this._fontSize = fontSize;
+        this._drawFont = true;
+    }
+    if (this._fontWeight !== fontWeight)
+    {
+        this._fontWeight = fontWeight;
+        this._drawFont = true;
+    }
+};
+
+/**
+ * @param {string} fontFace
+ */
+SEESAW.Component.prototype.setFontFace = function (fontFace)
+{
+    this.setFont(fontFace, this._fontSize, this._fontWeight);
+};
+
+/**
+ * @returns {string}
+ */
+SEESAW.Component.prototype.getFontFace = function ()
+{
+    return this._fontFace;
+};
+
+/**
+ * @param {string|number} fontSize
+ */
+SEESAW.Component.prototype.setFontSize = function (fontSize)
+{
+    this.setFont(this._fontFace, fontSize, this._fontWeight);
+};
+
+/**
+ * @returns {string|number}
+ */
+SEESAW.Component.prototype.getFontSize = function ()
+{
+    return this._fontSize;
+};
+
+/**
+ * @param {string|number} fontWeight
+ */
+SEESAW.Component.prototype.setFontWeight = function (fontWeight)
+{
+    this.setFont(this._fontFace, this._fontSize, fontWeight);
+};
+
+/**
+ * @returns {string|number}
+ */
+SEESAW.Component.prototype.getFontWeight = function ()
+{
+    return this._fontWeight;
+};
+
 /**
  * @param {SEESAW.Component} child
  */
@@ -299,6 +386,13 @@ SEESAW.Component.prototype.draw = function ()
         this._div.css('background', this._background);
         this._div.css('color', this._foreground);
         this._drawColors = false;
+    }
+    if (this._drawFont)
+    {
+        this._div.css('font-family', this._fontFace);
+        this._div.css('font-size', this._fontSize);
+        this._div.css('font-weight', this._fontWeight);
+        this._drawFont = false;
     }
 
     // Loop through the children
