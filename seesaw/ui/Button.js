@@ -1,6 +1,6 @@
 /**
  * @class SEESAW.Button
- * @param id
+ * @param {string} [id]
  * @constructor
  * @extends SEESAW.Component
  */
