@@ -2,7 +2,7 @@ $(document).ready(function ()
 {
     var seesawConfig = {
         fontSize:   '14px',
-        background: '#CCC'
+        background: '#EEE'
     };
 
     // Start SEESAW

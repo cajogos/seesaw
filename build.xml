@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project basedir="." default="compile">
+
+    <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask" classpath="build/compiler.jar"/>
+
+    <target name="compile">
+        <delete dir="${basedir}/build/output"/>
+        <mkdir dir="${basedir}/build/output"/>
+        <mkdir dir="${basedir}/build/output/css"/>
+
+        <copy todir="${basedir}/build/output/css">
+            <fileset dir="${basedir}/css"/>
+        </copy>
+
+        <jscomp compilationLevel="simple" warning="verbose" debug="false" output="build/output/seesaw.js">
+
+            <externs dir="${basedir}/build">
+                <file name="externs.js"/>
+            </externs>
+
+            <externs dir="${basedir}/js">
+                <file name="Stats.js"/>
+            </externs>
+
+            <!-- WARNING: Make sure the order is correct! -->
+            <sources dir="${basedir}/seesaw/init">
+                <file name="Seesaw.js"/>
+            </sources>
+
+            <sources dir="${basedir}/seesaw/util">
+                <file name="Encrypt.js"/>
+                <file name="Exception.js"/>
+                <file name="Number.js"/>
+            </sources>
+
+            <sources dir="${basedir}/seesaw/ui">
+                <file name="Component.js"/>
+                <file name="Button.js"/>
+                <file name="Label.js"/>
+            </sources>
+
+            <sources dir="${basedir}/seesaw/init">
+                <file name="Start.js"/>
+            </sources>
+        </jscomp>
+    </target>
+</project>

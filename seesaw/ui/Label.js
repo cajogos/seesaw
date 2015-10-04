@@ -6,7 +6,7 @@
  */
 SEESAW.Label = function (id, text)
 {
-    SEESAW.Component.call(this);
+    SEESAW.Component.call(this, id);
 
     this._text = (text !== undefined) ? text : this._id;
 };

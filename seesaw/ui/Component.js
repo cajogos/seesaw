@@ -12,7 +12,7 @@ SEESAW.Component = function (id)
     this._z = undefined;
 
     // Style variables
-    this._background = '#FFFFFF';
+    this._background = ''; // Transparent by default
     this._foreground = '#000000';
 
     this._fontFace = 'inherit';
@@ -325,7 +325,7 @@ SEESAW.Component.prototype.setParent = function (parent)
  */
 SEESAW.Component.prototype.getParent = function ()
 {
-    if (parent !== undefined)
+    if (this._parent !== undefined)
     {
         return this._parent;
     }
