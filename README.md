@@ -9,7 +9,6 @@ Pull requests are more than appreciated.
 
 This is a short list of things that I have yet to implement for SEESAW.
 
-- Minified Version
 - Event handling:
     - Clicking
         - On mouse down
@@ -19,7 +18,7 @@ This is a short list of things that I have yet to implement for SEESAW.
         - On mouse enter
         - On mouse leave
 - Component Types:
-    - Button
+    - Video
     - Input
     - Message
     - Table
@@ -30,12 +29,10 @@ This is a short list of things that I have yet to implement for SEESAW.
         - etc.
     - Window Managers
 - Animations:
-    - Fade
-    - etc.
 - Models
-    - Number
     - Text
     - etc.
+
 - To be honest, this list is almost infinite.
 
 ## Many Thanks To

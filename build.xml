@@ -38,6 +38,9 @@
             <sources dir="${basedir}/seesaw/util">
                 <file name="Encrypt.js"/>
                 <file name="Exception.js"/>
+            </sources>
+
+            <sources dir="${basedir}/seesaw/model">
                 <file name="Number.js"/>
             </sources>
 
@@ -45,6 +48,7 @@
                 <file name="Component.js"/>
                 <file name="Button.js"/>
                 <file name="Label.js"/>
+                <file name="Video.js"/>
             </sources>
 
             <sources dir="${basedir}/seesaw/init">

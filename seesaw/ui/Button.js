@@ -25,9 +25,7 @@ SEESAW.Button.prototype.create = function ()
 
     this._btn = $('#' + btnId);
     this._drawText = true;
-
-    this._btn.width(this._width);
-    this._btn.height(this._height);
+    this._drawDimensions = true;
 
     var self = this;
     this._btn.on('click', function ()
@@ -44,6 +42,12 @@ SEESAW.Button.prototype.draw = function ()
     {
         this._btn.html(this._text);
         this._drawText = false;
+    }
+    if (this._drawDimensions)
+    {
+        this._btn.width(this._width);
+        this._btn.height(this._height);
+        this._drawDimensions = false;
     }
 };
 
