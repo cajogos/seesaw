@@ -1,5 +1,7 @@
 # SEESAW
 
+[![Join the chat at https://gitter.im/cajogos/seesaw](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cajogos/seesaw?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A JavaScript framework for creation of always-running web apps.
 
 To help please contact c@rlos.info or [@Carlos_Tweets](http://twitter.com/carlos_tweets) on Twitter.
