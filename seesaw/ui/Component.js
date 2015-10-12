@@ -346,8 +346,8 @@ SEESAW.Component.prototype.create = function ()
     this.getParent().getDiv().append(div);
 
     this._div = $('#' + this._id);
-    this._div.css('position', 'relative');
-    this._div.css('display', 'block');
+    this._div.css('position', 'absolute');
+    this._div.css('box-sizing', 'border-box');
 
     // If z-index has not yet been defined, then set it to be one above its parent
     if (this._z === undefined)

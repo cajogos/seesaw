@@ -21,6 +21,7 @@ SEESAW.Start = function (config)
     this._div = $('#' + this._id);
     this._div.css('width', zone.width());
     this._div.css('height', zone.height());
+    this._div.css('position', 'relative');
 
     // Set configuration
     this._div.css('font-size', this._getConfig('fontSize'));
@@ -34,7 +35,7 @@ SEESAW.Start = function (config)
 
         this._stats.setMode(0);
         this._stats.domElement.style.top = '0';
-        this._stats.domElement.style.position = 'absolute';
+        this._stats.domElement.style.position = 'fixed';
         this._stats.domElement.style.zIndex = '1000';
         document.body.appendChild(this._stats.domElement);
     }

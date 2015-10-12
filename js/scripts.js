@@ -14,20 +14,20 @@ $(document).ready(function ()
     var label = new SEESAW.Label('label-1', 'Hello I am a label!');
     var video = new SEESAW.Video('video');
 
-    video.setBounds(50, 80, 120, 80);
+    video.setBounds(0, 0, 120, 80);
     video.setBackground('teal');
 
     seesaw.addChild(video);
 
 
-    label.setBounds(400, 400, 100, 40);
+    label.setBounds(0, 0, 100, 40);
     label.setFontFace('cursive');
     label.setForeground('#44aacc');
     seesaw.addChild(label);
 
     seesaw.addChild(btn);
 
-    btn.setBounds(100, 40, 100, 50);
+    btn.setBounds(0, 0, 100, 50);
 
     btn.addChild(btn2);
 
