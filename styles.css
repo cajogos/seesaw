@@ -34,7 +34,7 @@ div#preview-code {
     margin: 0 auto;
     background: whitesmoke;
     padding: 15px 0;
-    overflow: hidden;
+    overflow-y: scroll;
     height: 100px;
     opacity: 0.4;
     transition: all 0.5s;
