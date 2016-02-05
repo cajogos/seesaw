@@ -1,5 +1,5 @@
 /**
- * This is the start component, the component where the whole the SEESAW web app will run.
+ * This is the start component, the component where the whole of SEESAW will run.
  *
  * @class SEESAW.Start
  * @constructor
