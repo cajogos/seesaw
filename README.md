@@ -1,43 +1,28 @@
-# SEESAW
+# SEESAW JS
 
-[![Join the chat at https://gitter.im/cajogos/seesaw](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cajogos/seesaw?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Seesaw is a JavaScript MV\* (model-view-whatever) framework which allows for the creation of always running Web Applications using functions similar to Java\'s Swing library.
 
-A JavaScript framework for creation of always-running web apps.
+## From JS to HTML
 
-To help please contact c@rlos.info or [@Carlos_Tweets](http://twitter.com/carlos_tweets) on Twitter.
-Pull requests are more than appreciated.
+The idea is to be able to create web applications that can run at a native 60fps, on modern web browsers, and be able to process real-time information, provided here by 
+WebSockets or JSON.
 
-## TODO
+If you want to help out, just report any issues found or if you want to contribute just make a pull request.
 
-This is a short list of things that I have yet to implement for SEESAW.
+Currently being developed by [Carlos Ferreira](http://carlosferreira.me) ([@Carlos_Tweets](http://twitter.com/carlos_tweets))
 
-- Event handling:
-    - Clicking
-        - On mouse down
-        - On mouse up
-        - On mouse pressed
-    - Hovering
-        - On mouse enter
-        - On mouse leave
-- Component Types:
-    - Video
-    - Input
-    - Message
-    - Table
-    - List
-    - Canvas
-        - Canvas components
-        - Graph/charts generation
-        - etc.
-    - Window Managers
-- Animations:
-- Models
-    - Text
-    - etc.
+### Documentation
 
-- To be honest, this list is almost infinite.
+The documentation for Seesaw will be developed bit-by-bit as it is being implemented.
+
+### Implemented
+
+The following has been implemented:
+- I am currently rewriting the whole library, will update this as needed.
+
 
 ## Many Thanks To
 
 - MrDoob, for providing amazing and easy to implement statistics to SEESAW using his Stats.js plugin. - [Stats.js on GitHub](https://github.com/mrdoob/stats.js/)
 - Font Awesome, for being damn awesome - [Font Awesome on GitHub](https://github.com/FortAwesome/Font-Awesome)
+- The JS.ORG guys for providing the [http://seesaw.js.org](http://seesaw.js.org) subdomain!
