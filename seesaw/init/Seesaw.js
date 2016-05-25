@@ -1,5 +1,7 @@
 var SEESAW = {}; // Global variable for SEESAW
+
 SEESAW.createdAt = Date.now();
+
 SEESAW.client = {
     cookiesEnabled: navigator.cookieEnabled,
     language:       navigator.language,
