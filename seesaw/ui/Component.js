@@ -163,17 +163,22 @@ SEESAW.Component.prototype.draw = function ()
 {
     if (this._drawPosition)
     {
+        this._div.css('top', this._y);
+        this._div.css('left', this._x);
+        this._div.css('z-index', this._z);
         this._drawPosition = false;
     }
     if (this._drawSize)
     {
+        this._div.css('width', this._width);
+        this._div.css('height', this._height);
         this._drawSize = false;
     }
 
     // Loop through its children
     for (var key in this._childComponents)
     {
-        if (this.hasOwnProperty(key))
+        if (this._childComponents.hasOwnProperty(key))
         {
             this._childComponents[key].draw();
         }

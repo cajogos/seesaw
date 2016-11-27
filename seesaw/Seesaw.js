@@ -2,6 +2,7 @@
  * @namespace SEESAW
  */
 var SEESAW = {
+    components: [],
     userConfig: {}
 };
 

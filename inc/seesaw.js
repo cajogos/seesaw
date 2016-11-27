@@ -11,7 +11,7 @@ $(document).ready(function ()
 
     var comp1 = new SEESAW.Component('div-1');
 
-    seesaw.addChild(comp1);
+    comp1.setBounds(20, 100, 100, 250);
 
-    console.warn(seesaw);
+    seesaw.addChild(comp1);
 });

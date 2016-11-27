@@ -4,6 +4,11 @@
 ---
 A new version of Seesaw.js is being developed. You can gain access to the old version in the `_OLD` folder.
 
+**How to get Seesaw.js**
+```
+npm install seesawjs
+```
+
 ---
 
 ## Features
@@ -16,3 +21,4 @@ These are the main features of **Seesaw.js**. This list will be improved as new 
 
 ## Dependencies and Requirements
 - **jQuery 3:** The framework requires the most famous library jQuery. This has been used to make it easier for the framework to be compatible accross browsers. Seesaw.js requires the most up-to-date version of jQuery.
+- **Stats.js:** This tool by mrdoob is used whenever `SEESAW.DEVELOPMENT` is set to `true`. This will allow you to track performance of your web app.
