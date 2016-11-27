@@ -17,6 +17,14 @@ SEESAW.DEFAULT_CONFIG = {
 };
 
 /**
+ * @param {Object} userConfig
+ */
+SEESAW.setUserConfig = function(userConfig)
+{
+    SEESAW.userConfig = userConfig;
+};
+
+/**
  * @param {string} key
  */
 SEESAW.getConfig = function (key)
@@ -26,4 +34,15 @@ SEESAW.getConfig = function (key)
         return SEESAW.DEFAULT_CONFIG[key];
     }
     return SEESAW.userConfig[key];
+};
+
+/**
+ * @param {SEESAW.Component} component
+ */
+SEESAW.addComponent = function (component)
+{
+    if (component instanceof SEESAW.Component)
+    {
+        SEESAW.components.push(component);
+    }
 };

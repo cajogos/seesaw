@@ -83,14 +83,43 @@ SEESAW.Component = function (id)
      */
     this._fontWeight = 'inherit';
 
-    // Inheritance tree
+    /**
+     * This component's parent.
+     * @type {SEESAW.Component|undefined}
+     * @private
+     */
     this._parent = undefined;
+
+    /**
+     * This component's children.
+     * @type {Array}
+     * @private
+     */
     this._childComponents = [];
 
-    // Drawing flags
-    this._drawCreate = false;
+    /**
+     * This drawing flag handles the change of the component's position.
+     * @type {boolean}
+     * @private
+     */
     this._drawPosition = false;
+
+    /**
+     * This drawing flag handles the change of the component's size.
+     * @type {boolean}
+     * @private
+     */
     this._drawSize = false;
+
+    /**
+     * This drawing flag handles the change of colours in the object.
+     * @type {boolean}
+     * @private
+     */
+    this._drawColors = false;
+
+    // Add the component to the global SEESAW object
+    SEESAW.addComponent(this);
 };
 
 SEESAW.Component.prototype.constructor = SEESAW.Component;
@@ -128,7 +157,7 @@ SEESAW.Component.prototype.addChild = function (child)
 /**
  * @returns {*|jQuery|HTMLElement}
  */
-SEESAW.Component.prototype.getDiv = function()
+SEESAW.Component.prototype.getDiv = function ()
 {
     if (typeof this._div === 'undefined')
     {
@@ -173,6 +202,12 @@ SEESAW.Component.prototype.draw = function ()
         this._div.css('width', this._width);
         this._div.css('height', this._height);
         this._drawSize = false;
+    }
+    if (this._drawColors)
+    {
+        this._div.css('background', this._background);
+        this._div.css('color', this._foreground);
+        this._drawColors = false;
     }
 
     // Loop through its children
@@ -290,7 +325,71 @@ SEESAW.Component.prototype.setZ = function (z)
 /**
  * @returns {number|undefined}
  */
-SEESAW.Component.prototype.getZ = function()
+SEESAW.Component.prototype.getZ = function ()
 {
     return this._z;
+};
+
+/**
+ * @param {string} background
+ */
+SEESAW.Component.prototype.setBackground = function (background)
+{
+    if (this._background !== background)
+    {
+        this._background = background;
+        this._drawColors = true;
+    }
+};
+
+/**
+ * @returns {string}
+ */
+SEESAW.Component.prototype.getBackground = function ()
+{
+    return this._background;
+};
+
+/**
+ * @param {string} color
+ */
+SEESAW.Component.prototype.setForeground = function (color)
+{
+    if (this._foreground !== color)
+    {
+        this._foreground = color;
+        this._drawColors = true;
+    }
+};
+
+/**
+ * @returns {string}
+ */
+SEESAW.Component.prototype.getForeground = function ()
+{
+    return this._foreground;
+};
+
+/**
+ * @param {string|number} size
+ */
+SEESAW.Component.prototype.setFontSize = function (size)
+{
+    if (typeof size === 'number')
+    {
+        size = size + 'px';
+    }
+    if (this._fontSize !== size)
+    {
+        this._fontSize = size;
+        this._drawFont = true;
+    }
+};
+
+/**
+ * @returns {string}
+ */
+SEESAW.Component.prototype.getFontSize = function ()
+{
+    return this._fontSize;
 };
