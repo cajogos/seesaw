@@ -6,6 +6,24 @@
  */
 SEESAW.Component = function (id)
 {
+    if (typeof id === 'string')
+    {
+        id = id.trim();
+    }
+    // If no ID has been given to the object, try to come up with one
+    if (typeof id === 'undefined' || id === '')
+    {
+        id = 'comp-' + SEESAW.components.length;
+    }
+    // Check that this ID has not yet been defined
+    for (var i = 0; i < SEESAW.components.length; i++)
+    {
+        if (id === SEESAW.components[i].getID())
+        {
+            throw Error('This ID (' + id + ') already exists. IDs must be unique!');
+        }
+    }
+
     /**
      * The ID of the component which matches its ID in the DOM tree.
      * @type {string}
