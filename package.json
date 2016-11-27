@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/cajogos/seesaw/issues"
   },
-  "homepage": "https://github.com/cajogos/seesaw#readme",
+  "homepage": "http://seesaw.js.org/",
   "dependencies": {
     "jquery": "^3.1.1"
   }
