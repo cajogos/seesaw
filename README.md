@@ -10,7 +10,7 @@ A new version of Seesaw.js is being developed. You can gain access to the old ve
 These are the main features of **Seesaw.js**. This list will be improved as new features are implemented.
 
 ### Main Components
-- **Root Component:** This is Seesaw's root component a Root Component is needed to start Seesaw JS, this is `SEESAW.Root`.
+- **Root Component:** This is Seesaw's root component a Root Component is needed to start Seesaw JS, this is `SEESAW.RootComponent`.
 - **Basic Component:** All other components extend from the basic component `SEESAW.Component`.
 
 
