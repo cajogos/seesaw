@@ -17,4 +17,11 @@ $(document).ready(function ()
     comp1.setBackground('blue');
 
     seesaw.addChild(comp1);
+
+    comp2 = new SEESAW.Component();
+    seesaw.addChild(comp2);
+
+    comp2.setBackground('green');
+    comp2.setSize(100, 100);
+
 });

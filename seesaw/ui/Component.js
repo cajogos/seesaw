@@ -78,7 +78,7 @@ SEESAW.Component = function (id)
 
     /**
      * The font weight of the Component. This matches the font-weight CSS property.
-     * @type {string}
+     * @type {string|number}
      * @private
      */
     this._fontWeight = 'inherit';
@@ -117,6 +117,13 @@ SEESAW.Component = function (id)
      * @private
      */
     this._drawColors = false;
+
+    /**
+     * This drawing flag handle the change of fonts.
+     * @type {boolean}
+     * @private
+     */
+    this._drawFont = false;
 
     // Add the component to the global SEESAW object
     SEESAW.addComponent(this);
@@ -183,6 +190,12 @@ SEESAW.Component.prototype.create = function ()
         var zIndex = this.getParent().getZ() + 1;
         this.setZ(zIndex);
     }
+
+    // Set all first draw parameters to loop
+    this._drawPosition = true;
+    this._drawSize = true;
+    this._drawColors = true;
+    this._drawFont = true;
 };
 
 /**
@@ -209,7 +222,13 @@ SEESAW.Component.prototype.draw = function ()
         this._div.css('color', this._foreground);
         this._drawColors = false;
     }
-
+    if (this._drawFont)
+    {
+        this._div.css('font-family', this._fontFace);
+        this._div.css('font-size', this._fontSize);
+        this._div.css('font-weight', this._fontWeight);
+        this._drawFont = false;
+    }
     // Loop through its children
     for (var key in this._childComponents)
     {
@@ -371,6 +390,26 @@ SEESAW.Component.prototype.getForeground = function ()
 };
 
 /**
+ * @param {string} fontFace
+ */
+SEESAW.Component.prototype.setFontFace = function (fontFace)
+{
+    if (this._fontFace !== fontFace)
+    {
+        this._fontFace = fontFace;
+        this._drawFont = true;
+    }
+};
+
+/**
+ * @returns {string}
+ */
+SEESAW.Component.prototype.getFontFace = function ()
+{
+    return this._fontFace;
+};
+
+/**
  * @param {string|number} size
  */
 SEESAW.Component.prototype.setFontSize = function (size)
@@ -392,4 +431,24 @@ SEESAW.Component.prototype.setFontSize = function (size)
 SEESAW.Component.prototype.getFontSize = function ()
 {
     return this._fontSize;
+};
+
+/**
+ * @param {number|string} weight
+ */
+SEESAW.Component.prototype.setFontWeight = function (weight)
+{
+    if (this._fontWeight !== weight)
+    {
+        this._fontWeight = weight;
+        this._drawFont = true;
+    }
+};
+
+/**
+ * @returns {number|string}
+ */
+SEESAW.Component.prototype.getFontWeight = function ()
+{
+    return this._fontWeight;
 };
