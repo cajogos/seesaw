@@ -1,0 +1,30 @@
+{
+  "name": "seesawjs",
+  "version": "0.0.1",
+  "description": "A framework for building always running Web Applications.",
+  "main": "seesaw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cajogos/seesaw.git"
+  },
+  "keywords": [
+    "seesaw",
+    "web",
+    "webapp",
+    "app",
+    "application",
+    "swing"
+  ],
+  "author": "Carlos Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cajogos/seesaw/issues"
+  },
+  "homepage": "https://github.com/cajogos/seesaw#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
