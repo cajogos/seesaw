@@ -2,6 +2,7 @@
  * @namespace SEESAW
  */
 var SEESAW = {
+    rootComponent: undefined,
     components: [],
     userConfig: {}
 };
@@ -14,6 +15,18 @@ SEESAW.DEVELOPMENT = true;
 SEESAW.DEFAULT_CONFIG = {
     fontSize:   '12px',
     background: '#CCC'
+};
+
+/**
+ * @returns {undefined|SEESAW.RootComponent}
+ */
+SEESAW.getRoot = function()
+{
+    if (typeof SEESAW.rootComponent === 'undefined')
+    {
+        SEESAW.rootComponent = new SEESAW.RootComponent(SEESAW.userConfig);
+    }
+    return SEESAW.rootComponent;
 };
 
 /**

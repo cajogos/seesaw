@@ -1,15 +1,11 @@
 $(document).ready(function ()
 {
-    var seesawConfig = {
+    SEESAW.setUserConfig({
         fontSize:   '14px',
         background: 'red'
-    };
+    });
 
-    SEESAW.setUserConfig(seesawConfig);
-
-    // The root component
-    var seesaw = new SEESAW.RootComponent(seesawConfig);
-
+    var seesaw = SEESAW.getRoot();
 
     var comp1 = new SEESAW.Component('div-1');
 
@@ -18,7 +14,7 @@ $(document).ready(function ()
 
     seesaw.addChild(comp1);
 
-    comp2 = new SEESAW.Component();
+    var comp2 = new SEESAW.Component();
     seesaw.addChild(comp2);
 
     comp2.setBackground('green');
