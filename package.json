@@ -25,6 +25,7 @@
   },
   "homepage": "http://seesaw.js.org/",
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "stats.js": "0.17.0"
   }
 }
