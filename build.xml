@@ -9,6 +9,10 @@
 
         <jscomp compilationLevel="simple" warning="verbose" debug="false" output="build/output/seesaw.min.js">
 
+            <externs dir="${basedir}/build">
+                <file name="externs.js"/>
+            </externs>
+
             <!-- Main Seesaw Class -->
             <sources dir="${basedir}/seesaw">
                 <file name="Seesaw.js"/>
