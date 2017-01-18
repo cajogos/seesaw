@@ -316,6 +316,38 @@ SEESAW.Component.prototype.setSize = function (width, height)
 };
 
 /**
+ * @param {number} width
+ */
+SEESAW.Component.prototype.setWidth = function (width)
+{
+    this.setSize(width, this._height);
+};
+
+/**
+ * @returns {number}
+ */
+SEESAW.Component.prototype.getWidth = function ()
+{
+    return this._width;
+};
+
+/**
+ * @param {number} height
+ */
+SEESAW.Component.prototype.setHeight = function (height)
+{
+    this.setSize(this._width, height);
+};
+
+/**
+ * @returns {number}
+ */
+SEESAW.Component.prototype.getHeight = function ()
+{
+    return this._height;
+};
+
+/**
  * @param {number} x
  */
 SEESAW.Component.prototype.setX = function (x)
