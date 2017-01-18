@@ -17,6 +17,8 @@ SEESAW.RootComponent = function ()
     this._div.css('height', zone.height());
     this._div.css('position', 'relative');
 
+    this.setSize(zone.width(), zone.height());
+
     this._div.css('font-size', SEESAW.getConfig('fontSize'));
     this._div.css('background', SEESAW.getConfig('background'));
 
