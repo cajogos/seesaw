@@ -15,8 +15,6 @@ $(document).ready(function ()
 
     seesaw.addChild(comp1);
 
-    console.log(seesaw);
-
     var comp2 = new SEESAW.Component();
     comp1.addChild(comp2);
 
