@@ -1,10 +1,12 @@
 {
   "name": "seesawjs",
-  "version": "0.0.1",
-  "description": "A framework for building always running Web Applications.",
-  "main": "seesaw.js",
+  "version": "0.0.2",
+  "description": "A JavaScript Framework for Always Running Applications",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -13,7 +15,6 @@
   "keywords": [
     "seesaw",
     "web",
-    "webapp",
     "app",
     "application",
     "swing"
@@ -23,9 +24,13 @@
   "bugs": {
     "url": "https://github.com/cajogos/seesaw/issues"
   },
-  "homepage": "http://seesaw.js.org/",
-  "dependencies": {
-    "jquery": "^3.1.1",
-    "stats.js": "0.17.0"
+  "homepage": "https://seesaw.js.org/",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
