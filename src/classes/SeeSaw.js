@@ -1,20 +1,28 @@
 import { Component } from './Component';
 
+let componentsCreated = 0;
+
 export class SeeSaw
 {
     constructor()
     {
-        this._rootComponent = new Component('seesaw', document.getElementById('seesaw'));
+        let rootElement = document.getElementById('seesaw');
+        rootElement.style.position = 'relative';
+
+        this._rootComponent = new Component('seesaw', rootElement);
+        componentsCreated++;
 
         // Interval that performs the drawing of components
         this._drawInterval = setInterval(() => {
             this._performDrawing();
-        }, 1000);
+        }, 16);
     }
 
-    static Component(id)
+    static component({ id = null, type = 'div' } = {})
     {
-        return new Component(id, document.createElement('div'));
+        componentsCreated++;
+        if (id === null) id = `ssc-${componentsCreated}`;
+        return new Component(id, document.createElement(type));
     }
 
     append(component)
